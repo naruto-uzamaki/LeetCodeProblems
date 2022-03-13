@@ -8,13 +8,14 @@ public:
                 idx.push_back(i);
             }
         }
+        
         unordered_set<int> res;
         for(int i=0;i<idx.size();i++){
-            //cout<<idx[i]<<",";
             for(int j=max(0,idx[i]-k);j<=min(n-1,idx[i]+k);j++){
                 res.insert(j);
             }
         }
+        
         vector<int> sol(res.begin(),res.end());
         sort(sol.begin(),sol.end());
         return sol;
